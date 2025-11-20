@@ -1,4 +1,7 @@
 ### Objets
+
+http://localhost:8080/swagger-ui/index.html
+
 - Client
 * name
 * address
@@ -25,3 +28,7 @@
 - BankingCard
 * account_id
 * card_type
+
+---
+DTO
+Faire un virement

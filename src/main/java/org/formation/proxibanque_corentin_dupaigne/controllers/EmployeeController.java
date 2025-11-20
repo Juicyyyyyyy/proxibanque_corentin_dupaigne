@@ -1,6 +1,6 @@
 package org.formation.proxibanque_corentin_dupaigne.controllers;
 
-import org.formation.proxibanque_corentin_dupaigne.models.Employee;
+import org.formation.proxibanque_corentin_dupaigne.models.Advisor;
 import org.formation.proxibanque_corentin_dupaigne.services.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,29 +19,29 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Employee>> getAllEmployees() {
-        List<Employee> employees = employeeService.findAll();
-        return new ResponseEntity<>(employees, HttpStatus.OK);
+    public ResponseEntity<List<Advisor>> getAllEmployees() {
+        List<Advisor> advisors = employeeService.findAll();
+        return new ResponseEntity<>(advisors, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+    public ResponseEntity<Advisor> getEmployeeById(@PathVariable Long id) {
         return employeeService.findById(id)
                 .map(employee -> new ResponseEntity<>(employee, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
-        Employee savedEmployee = employeeService.save(employee);
-        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    public ResponseEntity<Advisor> createEmployee(@RequestBody Advisor advisor) {
+        Advisor savedAdvisor = employeeService.save(advisor);
+        return new ResponseEntity<>(savedAdvisor, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
-        Employee updatedEmployee = employeeService.update(id, employee);
-        if (updatedEmployee != null) {
-            return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
+    public ResponseEntity<Advisor> updateEmployee(@PathVariable Long id, @RequestBody Advisor advisor) {
+        Advisor updatedAdvisor = employeeService.update(id, advisor);
+        if (updatedAdvisor != null) {
+            return new ResponseEntity<>(updatedAdvisor, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }

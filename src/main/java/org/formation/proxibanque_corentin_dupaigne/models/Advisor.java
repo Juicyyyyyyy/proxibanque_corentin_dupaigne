@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Employee {
+public class Advisor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
@@ -19,4 +19,6 @@ public class Employee {
     private String name;
     private String email;
     private String password;
+    // ca devrait etre un enum ou un objet Role mais j'ai un peu la flemme
+    private String role;
 }

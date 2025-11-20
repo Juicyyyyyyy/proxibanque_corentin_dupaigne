@@ -1,6 +1,6 @@
 package org.formation.proxibanque_corentin_dupaigne.services;
 
-import org.formation.proxibanque_corentin_dupaigne.models.Employee;
+import org.formation.proxibanque_corentin_dupaigne.models.Advisor;
 import org.formation.proxibanque_corentin_dupaigne.repositories.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,26 +16,26 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public List<Employee> findAll() {
+    public List<Advisor> findAll() {
         return employeeRepository.findAll();
     }
 
-    public Optional<Employee> findById(Long id) {
+    public Optional<Advisor> findById(Long id) {
         return employeeRepository.findById(id);
     }
 
-    public Employee save(Employee employee) {
-        return employeeRepository.save(employee);
+    public Advisor save(Advisor advisor) {
+        return employeeRepository.save(advisor);
     }
 
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);
     }
 
-    public Employee update(Long id, Employee employee) {
+    public Advisor update(Long id, Advisor advisor) {
         if (employeeRepository.existsById(id)) {
-            employee.setId(id);
-            return employeeRepository.save(employee);
+            advisor.setId(id);
+            return employeeRepository.save(advisor);
         }
         return null;
     }

@@ -47,33 +47,33 @@ public class DataSeeder implements CommandLineRunner {
         agency3.setName("Agence Marseille Canebière");
         agency3 = agencyService.save(agency3);
 
-        Employee employee1 = new Employee();
-        employee1.setAgency(agency1);
-        employee1.setName("Jean Dupont");
-        employee1.setEmail("jean.dupont@proxibanque.fr");
-        employee1.setPassword("password123");
-        employeeService.save(employee1);
+        Advisor advisor1 = new Advisor();
+        advisor1.setAgency(agency1);
+        advisor1.setName("Jean Dupont");
+        advisor1.setEmail("jean.dupont@proxibanque.fr");
+        advisor1.setPassword("password123");
+        employeeService.save(advisor1);
 
-        Employee employee2 = new Employee();
-        employee2.setAgency(agency1);
-        employee2.setName("Marie Martin");
-        employee2.setEmail("marie.martin@proxibanque.fr");
-        employee2.setPassword("password123");
-        employeeService.save(employee2);
+        Advisor advisor2 = new Advisor();
+        advisor2.setAgency(agency1);
+        advisor2.setName("Marie Martin");
+        advisor2.setEmail("marie.martin@proxibanque.fr");
+        advisor2.setPassword("password123");
+        employeeService.save(advisor2);
 
-        Employee employee3 = new Employee();
-        employee3.setAgency(agency2);
-        employee3.setName("Pierre Bernard");
-        employee3.setEmail("pierre.bernard@proxibanque.fr");
-        employee3.setPassword("password123");
-        employeeService.save(employee3);
+        Advisor advisor3 = new Advisor();
+        advisor3.setAgency(agency2);
+        advisor3.setName("Pierre Bernard");
+        advisor3.setEmail("pierre.bernard@proxibanque.fr");
+        advisor3.setPassword("password123");
+        employeeService.save(advisor3);
 
-        Employee employee4 = new Employee();
-        employee4.setAgency(agency3);
-        employee4.setName("Sophie Dubois");
-        employee4.setEmail("sophie.dubois@proxibanque.fr");
-        employee4.setPassword("password123");
-        employeeService.save(employee4);
+        Advisor advisor4 = new Advisor();
+        advisor4.setAgency(agency3);
+        advisor4.setName("Sophie Dubois");
+        advisor4.setEmail("sophie.dubois@proxibanque.fr");
+        advisor4.setPassword("password123");
+        employeeService.save(advisor4);
 
         Client client1 = new Client();
         client1.setName("Alice Durand");
